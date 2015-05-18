@@ -198,9 +198,9 @@ testLogger = optim.Logger('test.log')
 parameters, gradParameters = model:getParameters()
 
 sgdconf = {
-	learningRate = 0.3,
+	learningRate = 0.1,
 	weightDecay = 0,
-	momentum = 0,
+	momentum = 0.9,
 	learningRateDecay = 1e-7
 	}
 optimMethod = optim.sgd
@@ -383,7 +383,7 @@ function test()
    confusion:zero()
 end
 
-while true do
+for i=1, 30 do
 	train()
 	test()
 end
